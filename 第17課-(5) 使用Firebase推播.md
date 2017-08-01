@@ -110,7 +110,7 @@ module.exports = router;
 
 #### (1)建立一個App, 名稱為 myApp:
 ```
-ionic start myApp blank --save
+ionic start myApp blank --v2
 ```
 
 
