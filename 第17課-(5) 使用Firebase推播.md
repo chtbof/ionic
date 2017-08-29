@@ -9,7 +9,7 @@
 npm start
 
 再使用瀏覽器連結Express主機:
-http://主機位址?topic=marketing;content=你好
+http://主機位址?topic=marketing&content=你好
 ```
 
 ## Express部份
@@ -64,7 +64,7 @@ router.get('/', function(req, res, next) {
 	
     //=========================================================
     // 傳送通知給訂閱某個主題的連接設備
-    // 傳送範例 http://主機位址?topic=marketing;content=你好
+    // 傳送範例 http://主機位址?topic=marketing&content=你好
     //=========================================================
     var message = {
         to: '/topics/' + topic, 
