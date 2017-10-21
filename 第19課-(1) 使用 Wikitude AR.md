@@ -12,7 +12,7 @@
 ionic start myApp blank --save
 ```
 
-#### (2)在<下載>資料夾中, 下載 myAR.zip, 解壓縮後, 將解壓src內[所有檔案] 複製並取代 myApp/src 內的程式.
+#### (2)在<下載>資料夾中, 下載 myAR.zip, 解壓縮後, 將解壓的src中[所有檔案], 複製並取代 myApp/src 中的程式.
 
 
 #### (3)修改 myApp/config.xml, 其中 android-minSdkVersion 改為至少 19, 如下:
