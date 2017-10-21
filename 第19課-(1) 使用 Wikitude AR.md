@@ -28,7 +28,7 @@ myAR.zip解壓
                         |___ my-ar.ts                                
                             
 ```
-### 1. 快速建立
+# 1. 快速建立
 
 
 #### (1)建立一個App, 名稱為 myApp:
@@ -69,29 +69,8 @@ cordova build
 
 
 
-#### (在<下載>資料夾中的 myAR.zip, 解壓縮後的結構如下:)
-```
-myAR.zip解壓
-  |
-  |___ <src>    
-         |___ <app>   
-         |       |___ app.component.ts                  
-         |       |___ WikitudePlugin.d.ts  
-         | 
-         |___ <assets>  
-         |       |___ (有多個AR應用版型)
-         |
-         |___ <pages>   
-                 |___ <home> 
-                 |      |___ home.html 
-                 |      |___ home.ts   
-                 |       
-                 |___ <my-ar> 
-                        |___ my-ar.html 
-                        |___ my-ar.ts                                
-                            
-```
-### 2. 一步一步建立
+
+# 2. 一步一步建立
 
 
 #### (1)建立一個App, 名稱為 myApp:
@@ -170,7 +149,7 @@ ionic serve -l -c
 ```
 
 
-#### (11)產生apk檔, 完成後發佈到手機上執行:
+#### (12)產生apk檔, 完成後發佈到手機上執行:
 ```
 cordova build
 ```
