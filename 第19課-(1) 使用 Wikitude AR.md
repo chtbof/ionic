@@ -31,7 +31,7 @@ cordova platform add android
 ionic plugin add https://github.com/Wikitude/wikitude-cordova-plugin.git
 ```
 
-#### (6)編譯並在模擬器上執行 (wikitude不能在模擬器上執行, 應該有錯):
+#### (6)編譯 (wikitude不能在模擬器上執行, 應該有模擬器錯誤, 不必理會):
 ```
 ionic serve -l -c
 ```
@@ -138,7 +138,7 @@ cordova platform add android
 ionic plugin add https://github.com/Wikitude/wikitude-cordova-plugin.git
 ```
 
-#### (11)編譯並在模擬器上執行 (wikitude不能在模擬器上執行, 應該有錯):
+#### (11)編譯 (wikitude不能在模擬器上執行, 應該有模擬器錯誤, 不必理會):
 ```
 ionic serve -l -c
 ```
