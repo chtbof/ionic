@@ -12,10 +12,10 @@
 ionic start myApp blank --save
 ```
 
-#### (2)在<下載>資料夾中, 下載 myAR.zip, 解壓縮後, 將解壓<src>內 [所有檔案] 複製並取代 myApp/src 內的程式.
+#### (2)在<下載>資料夾中, 下載 myAR.zip, 解壓縮後, 將解壓src內[所有檔案] 複製並取代 myApp/src 內的程式.
 
 
-#### (3)修改<myApp>中的 config.xml, 其中 android-minSdkVersion 改為至少 19, 如下:
+#### (3)修改 myApp/config.xml, 其中 android-minSdkVersion 改為至少 19, 如下:
 ```
 <preference name="android-minSdkVersion" value="19"/>
 ```
@@ -37,7 +37,7 @@ ionic serve -l -c
 ```
 
 
-#### (7)產生apk檔, 完成後發佈到手機上執行::
+#### (7)產生apk檔, 完成後發佈到手機上執行:
 ```
 cordova build
 ```
@@ -51,7 +51,7 @@ myAR.zip解壓
   |
   |___ <src>    
          |___ <app>   
-         |       |___ app.component.ts                  | 
+         |       |___ app.component.ts                  
          |       |___ WikitudePlugin.d.ts  
          | 
          |___ <assets>  
@@ -79,10 +79,10 @@ cd myApp
 ionic g page my-ar
 ```
 
-#### (3)複製 myAR.zip解壓之src/app中的 WikitudePlugin.d.ts 到 <myApp>中的相對位址
+#### (3)複製 myAR.zip解壓之src/app中的 WikitudePlugin.d.ts 到 myApp中的相對位址
 
 
-#### (4)依照 myAR.zip解壓之src/app中的 app.component.ts 說明, 修改 <myApp>中的相對的 app.component.ts 檔案
+#### (4)依照 myAR.zip解壓之src/app中的 app.component.ts 說明, 修改 myApp中的相對的 app.component.ts 檔案
 ```
 加入了兩段程式, 並在第2段程式中貼入自己的skdKey.
 (在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey)
@@ -97,13 +97,13 @@ WikitudePlugin._sdkKey = ".....貼入自己的skdKey....."
 .
 ```
 
-#### (5)複製 myAR.zip解壓之src/assets中的 [所有程式] 到 <myApp>中的相對位址
+#### (5)複製 myAR.zip解壓之src/assets中的 [所有程式] 到 myApp中的相對位址
 ```
 如果需要更多的應用版型, 可在以下網址下載:
 https://github.com/Wikitude/wikitude-sdk-samples
 ```
 
-#### (6)複製 myAR.zip解壓之src/pages/my-ar中的 [所有程式] 到 <myApp>中的相對位址
+#### (6)複製 myAR.zip解壓之src/pages/my-ar中的 [所有程式] 到 myApp中的相對位址
 ```
 在 my-ar.ts程式中, 有傳送的座標參數, 可自行修改, 如下:
 
@@ -118,7 +118,7 @@ WikitudePlugin.callJavaScript('World.loadPoisFromJsonData([{"id": "1","longitude
 .
 ```
 
-#### (7)複製 myAR.zip解壓之src/pages/home中的 [所有程式] 到 <myApp>中的相對位址
+#### (7)複製 myAR.zip解壓之src/pages/home中的 [所有程式] 到 myApp中的相對位址
 
 
 #### (8)修改<myApp>中的 config.xml, 其中 android-minSdkVersion 改為至少 19, 如下:
