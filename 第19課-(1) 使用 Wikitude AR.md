@@ -101,10 +101,10 @@ cd myApp
 ionic g page my-ar
 ```
 
-#### (3)複製 myAR.zip解壓之src/app/WikitudePlugin.d.ts 到 myApp中的相對位址
+#### (3)複製 myAR.zip解壓之src/app/WikitudePlugin.d.ts 到 myApp/src/app/ 中.
 
 
-#### (4)依照 myAR.zip解壓之src/app/app.component.ts 說明, 修改 myApp中的相對的 app.component.ts 檔案
+#### (4)依照 myAR.zip解壓之src/app/app.component.ts 說明, 修改 myApp/src/app/app.component.ts 
 ```
 加入了兩段程式, 並在第2段程式中貼入自己的skdKey.
 (在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey)
@@ -119,13 +119,13 @@ WikitudePlugin._sdkKey = ".....貼入自己的skdKey....."
 .
 ```
 
-#### (5)複製 myAR.zip解壓之src/assets/[所有程式] 到 myApp中的相對位址
+#### (5)複製 myAR.zip解壓之src/assets/[所有程式] 到 myApp/src/assets/ 中.
 ```
 如果需要更多的應用版型, 可在以下網址下載:
 https://github.com/Wikitude/wikitude-sdk-samples
 ```
 
-#### (6)複製 myAR.zip解壓之src/pages/my-ar/[所有程式] 到 myApp中的相對位址
+#### (6)複製 myAR.zip解壓之src/pages/my-ar/[所有程式] 到 myApp/src/pages/my-ar/ 中.
 ```
 在 my-ar.ts程式中, 有傳送的座標參數, 可自行修改, 如下:
 
@@ -140,7 +140,7 @@ WikitudePlugin.callJavaScript('World.loadPoisFromJsonData([{"id": "1","longitude
 .
 ```
 
-#### (7)複製 myAR.zip解壓之src/pages/home/[所有程式] 到 myApp中的相對位址
+#### (7)複製 myAR.zip解壓之src/pages/home/[所有程式] 到 myApp/src/pages/home/ 中.
 
 
 #### (8)修改 myApp/config.xml, 其中 android-minSdkVersion 改為至少 19, 如下:
