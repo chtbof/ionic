@@ -4,8 +4,30 @@
 #### 執行圖示
 ![GitHub Logo](/images/fig19-01.jpg)
 
-
 ### 1. 快速建立
+
+#### myAR.zip解壓後:
+```
+myAR.zip解壓
+  |
+  |___ <src>    
+         |___ <app>   
+         |       |___ app.component.ts                  
+         |       |___ WikitudePlugin.d.ts  
+         | 
+         |___ <assets>  
+         |       |___ (有多個AR應用版型)
+         |
+         |___ <pages>   
+                 |___ <home> 
+                 |      |___ home.html 
+                 |      |___ home.ts   
+                 |       
+                 |___ <my-ar> 
+                        |___ my-ar.html 
+                        |___ my-ar.ts                                
+                            
+```
 
 #### (1)建立一個App, 名稱為 myApp:
 ```
