@@ -44,24 +44,36 @@ ionic start myApp blank --save
 <preference name="android-minSdkVersion" value="19"/>
 ```
 
-#### (4)加入android平台程式:
+#### (4)修改 myApp/src/app/app.component.ts, 申請一個skdKey, 貼到程式中.
+```
+.
+.
+//-------------------------------------------------------------------------------------
+// 在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey, 並貼入以下:
+//-------------------------------------------------------------------------------------      
+WikitudePlugin._sdkKey = ".....貼入自己的skdKey....."
+.
+.
+```
+
+#### (5)加入android平台程式:
 ```
 cd myApp
 cordova platform add android
 ```
 
-#### (5)加入Wikitude外掛:
+#### (6)加入Wikitude外掛:
 ```
 ionic plugin add https://github.com/Wikitude/wikitude-cordova-plugin.git
 ```
 
-#### (6)編譯 (wikitude不能在模擬器上執行, 應該有模擬器錯誤, 不必理會):
+#### (7)編譯 (wikitude不能在模擬器上執行, 應該有模擬器錯誤, 不必理會):
 ```
 ionic serve -l -c
 ```
 
 
-#### (7)產生apk檔, 完成後發佈到手機上執行:
+#### (8)產生apk檔, 完成後發佈到手機上執行:
 ```
 cordova build
 ```
