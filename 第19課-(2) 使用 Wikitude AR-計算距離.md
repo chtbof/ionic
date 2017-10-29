@@ -11,7 +11,7 @@
 修改 myApp 中的2個程式:
 
 
-<myApp>myAR.zip解壓
+<myApp>
   |
   |___ <src>    
          |___ <assets>  
