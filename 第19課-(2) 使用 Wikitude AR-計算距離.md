@@ -151,7 +151,7 @@ AR.context.onScreenClick = World.onScreenClick;
 
 
 
-#### (2)將 my-ar.ts 改成以下:
+#### (2)將 my-ar.ts 改成以下(依需要修改目的地座標及名稱):
 
 ```
 //----------------------------------------------------------------
@@ -182,13 +182,17 @@ export class MyAr {
             function(success) {
                 console.log("ARchitect World loaded successfully.");
 
-                //---------------------------------------------------------------------------------------------            //
-                //呼叫(傳參數)給 [www/assets/09_ObtainPoiData_1_FromApplicationModel/fromapplicationmodel.js]的函式
                 //---------------------------------------------------------------------------------------------
+                //呼叫(傳參數)給 [www/assets/09_ObtainPoiData_1_FromApplicationModel/fromapplicationmodel.js]的函式
+                //(1)先設定自己的座標
+                //---------------------------------------------------------------------------------------------
                 WikitudePlugin.callJavaScript('World.architectView.setLocation()');
+		
+                //---------------------------------------------------------------------------------------------
+                //(2)再設定目的地座標(依自己的需要修改)		
+                //---------------------------------------------------------------------------------------------		
                 WikitudePlugin.callJavaScript('World.loadPoisFromJsonData([{"id": "1","longitude": "121.520927","latitude": "25.035017","description": "國家音樂廳","altitude": "100.0", "name": "音樂廳"}])');
                 //---------------------------------------------------------------------------------------------
-
             },
             function(fail) {
                 console.log("Failed to load ARchitect World!");            
