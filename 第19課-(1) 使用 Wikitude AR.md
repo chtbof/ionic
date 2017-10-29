@@ -28,61 +28,8 @@ myAR.zip解壓
                         |___ my-ar.ts                                
                             
 ```
-# 1. 快速建立
 
-
-#### (1)建立一個App, 名稱為 myApp:
-```
-ionic start myApp blank --save
-```
-
-#### (2)在<下載>資料夾中, 下載 myAR.zip, 解壓縮後, 將解壓的src中[所有檔案], 複製並取代 myApp/src 中的程式.
-
-
-#### (3)修改 myApp/config.xml, 其中 android-minSdkVersion 改為至少 19, 如下:
-```
-<preference name="android-minSdkVersion" value="19"/>
-```
-
-#### (4)修改 myApp/src/app/app.component.ts, 申請一個skdKey, 貼到程式中.
-```
-.
-.
-//-------------------------------------------------------------------------------------
-// 在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey, 並貼入以下:
-//-------------------------------------------------------------------------------------      
-WikitudePlugin._sdkKey = ".....貼入自己的skdKey....."
-.
-.
-```
-
-#### (5)加入android平台程式:
-```
-cd myApp
-cordova platform add android
-```
-
-#### (6)加入Wikitude外掛:
-```
-ionic plugin add https://github.com/Wikitude/wikitude-cordova-plugin.git
-```
-
-#### (7)編譯 (wikitude不能在模擬器上執行, 應該有模擬器錯誤, 不必理會):
-```
-ionic serve -l -c
-```
-
-
-#### (8)產生apk檔, 完成後發佈到手機上執行:
-```
-cordova build
-```
-
-
-
-
-
-# 2. 一步一步建立
+# 建立步驟:
 
 
 #### (1)建立一個App, 名稱為 myApp:
@@ -97,12 +44,14 @@ ionic g page my-ar
 ```
 
 #### (3)複製 myAR.zip解壓之src/app/WikitudePlugin.d.ts 到 myApp/src/app/ 中.
-
+```
+先在<下載>資料夾中下載 myAR.zip, 下載後解壓縮.
+```
 
 #### (4)依照 myAR.zip解壓之src/app/app.component.ts 說明, 修改 myApp/src/app/app.component.ts 
 ```
 (4-1)
-在myAR.zip解壓之src/app/app.component.ts中有2段註解的程式, 加入 myApp/src/app/app.component.ts中.
+在myAR.zip解壓之src/app/app.component.ts中有2段註解的程式, 複製貼上 myApp/src/app/app.component.ts中.
 
 (4-2)
 在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey.
