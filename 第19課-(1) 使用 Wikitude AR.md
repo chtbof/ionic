@@ -108,8 +108,7 @@ ionic g page my-ar
 在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey.
 
 (4-3)
-在加入第2段程式中的以下指令內, 填入自己申請的金鑰
-
+在加入第2段程式中的以下指令內, 填入自己申請的金鑰:
 WikitudePlugin._sdkKey = ".....貼入自己的skdKey....."
 ```
 
