@@ -27,6 +27,9 @@
 
 #### (1)將 fromapplicationmodel.js 改成以下:
 ```
+//-----------------------------
+// 這個程式作為外掛使用即可.
+//-----------------------------
 var World = {
     // different POI-Marker assets
     markerDrawable_idle: null,
