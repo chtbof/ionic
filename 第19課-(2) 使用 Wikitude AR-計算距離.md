@@ -148,7 +148,7 @@ AR.context.onScreenClick = World.onScreenClick;
 
 
 
-#### (1)my-ar.ts
+#### (2)my-ar.ts
 
 ```
 import { Component } from '@angular/core';
