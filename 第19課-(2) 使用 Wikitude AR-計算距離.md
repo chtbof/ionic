@@ -25,7 +25,7 @@
 ```
 
 
-#### (1)fromapplicationmodel.js
+#### (1)將 fromapplicationmodel.js 改成以下:
 ```
 var World = {
     // different POI-Marker assets
@@ -148,7 +148,7 @@ AR.context.onScreenClick = World.onScreenClick;
 
 
 
-#### (2)my-ar.ts
+#### (2)將 my-ar.ts 改成以下:
 
 ```
 //----------------------------------------------------------------
@@ -202,3 +202,16 @@ export class MyAr {
     //----------------------------------------------------------------------   
 }
 ```
+
+#### (3)編譯 (wikitude不能在模擬器上執行, 應該有模擬器錯誤, 不必理會):
+```
+ionic serve -l -c
+```
+
+
+#### (4)產生apk檔, 完成後發佈到手機上執行:
+```
+cordova build
+```
+
+#### (5)在手機執行前, 請先開啟手機的定位功能.
