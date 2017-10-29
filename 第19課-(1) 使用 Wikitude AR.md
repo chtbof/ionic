@@ -165,3 +165,6 @@ ionic serve -l -c
 ```
 cordova build
 ```
+
+#### (13)在手機執行前, 請先開啟手機的定位功能.
+
