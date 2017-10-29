@@ -151,6 +151,10 @@ AR.context.onScreenClick = World.onScreenClick;
 #### (2)my-ar.ts
 
 ```
+//----------------------------------------------------------------
+/// <reference path="../../app/WikitudePlugin.d.ts" />
+//----------------------------------------------------------------
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
