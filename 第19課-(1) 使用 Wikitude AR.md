@@ -120,7 +120,7 @@ https://github.com/Wikitude/wikitude-sdk-samples
 
 #### (6)複製 myAR.zip解壓之src/pages/my-ar/[所有程式] 到 myApp/src/pages/my-ar/ 中.
 ```
-在 my-ar.ts程式中, 有傳送的座標參數, 可自行修改, 如下:
+my-ar.ts 程式呼叫 Wikitude 外掛, 並傳送座標參數. 參數是一個陣列, 目前只包含一個物件, 但也可以修改傳送多個目標物件, 如下:
 
 .
 .
@@ -134,7 +134,9 @@ WikitudePlugin.callJavaScript('World.loadPoisFromJsonData([{"id": "1","longitude
 ```
 
 #### (7)複製 myAR.zip解壓之src/pages/home/[所有程式] 到 myApp/src/pages/home/ 中.
-
+```
+範例中的home只是加入一個按鈕, 按下後打開 my-ar 頁面而已.
+```
 
 #### (8)修改 myApp/config.xml, 其中 android-minSdkVersion 改為至少 19, 如下:
 ```
