@@ -101,17 +101,16 @@ ionic g page my-ar
 
 #### (4)依照 myAR.zip解壓之src/app/app.component.ts 說明, 修改 myApp/src/app/app.component.ts 
 ```
-加入了兩段程式, 並在第2段程式中貼入自己的skdKey.
-(在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey)
+(4-1)
+在myAR.zip解壓之src/app/app.component.ts中有2段註解的程式, 加入 myApp/src/app/app.component.ts中.
 
-.
-.
-//-------------------------------------------------------------------------------------
-// 在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey, 並貼入以下:
-//-------------------------------------------------------------------------------------      
+(4-2)
+在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey.
+
+(4-3)
+在加入第2段程式中的以下指令內, 填入自己申請的金鑰
+
 WikitudePlugin._sdkKey = ".....貼入自己的skdKey....."
-.
-.
 ```
 
 #### (5)複製 myAR.zip解壓之src/assets/[所有程式] 到 myApp/src/assets/ 中.
