@@ -32,33 +32,7 @@ keytool -exportcert -alias YOUR_RELEASE_KEY_ALIAS -keystore YOUR_RELEASE_KEY_PAT
 ![GitHub Logo](/images/fig14-01-2.jpg)
 
 
-
-#### (1)建立一個App, 名稱為 myApp:
-```
-ionic start myApp blank --save
-```
-
-
-#### (2)安裝外掛:
-```
-cd myApp
-
-(a)
-cordova plugin add cordova-plugin-facebook4 --variable APP_ID="應用程式編號" --variable APP_NAME="顯示名稱"
-
-(b)
-npm install --save @ionic-native/facebook
-
-備註:步驟(a)中的應用程式編號及顯示名稱, 請參考自己在準備工作(2)中的設定.
-```
-
-
-#### (3)下載樣板程式, 解壓縮後複製到<myApp>資料夾中(取代舊檔案):
-```
-下載\ionic-測試-14-1.zip
-```
-
-#### (4)本測試使用內容如下:
+## 本測試內容如下:
 ```
  d:\
   |___ <myApp>  
@@ -75,14 +49,41 @@ npm install --save @ionic-native/facebook
 ```
 
 
-##### (5.1) config.xml(部分, 修改widget id, 內容與fb應用程式中的Google Play套件名稱相同)
+
+### (1)建立一個App, 名稱為 myApp:
+```
+ionic start myApp blank --save
+```
+
+
+### (2)安裝外掛:
+```
+cd myApp
+
+(a)
+cordova plugin add cordova-plugin-facebook4 --variable APP_ID="應用程式編號" --variable APP_NAME="顯示名稱"
+
+(b)
+npm install --save @ionic-native/facebook
+
+備註:步驟(a)中的應用程式編號及顯示名稱, 請參考自己在準備工作(2)中的設定.
+```
+
+
+### (3)下載樣板程式, 解壓縮後複製到<myApp>資料夾中(取代舊檔案):
+```
+下載\ionic-測試-14-1.zip
+```
+
+
+### (4.1) config.xml(部分, 修改widget id, 內容與fb應用程式中的Google Play套件名稱相同)
 ```
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.abc.myFBapplication" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>myApp</name>   
 ```
 
-#### (5.2) app.module.ts (增加引用 Facebook)
+### (4.2) app.module.ts (增加引用 Facebook)
 ```javascript
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -120,7 +121,7 @@ export class AppModule {}
 
 
 
-#### (5.3) home.html
+### (4.3) home.html
 ```html
 <ion-header>
   <ion-navbar>
@@ -149,7 +150,7 @@ export class AppModule {}
 
 
 
-#### (5.4) home.ts
+### (4.4) home.ts
 ```javascript
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
