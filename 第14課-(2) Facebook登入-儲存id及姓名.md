@@ -14,17 +14,30 @@
 ##### 準備工作 (2)應用程式編號(不可改), 顯示名稱(即先前新增應用程式之名稱), Google Play套件名稱(與config.xml的id相同)
 ![GitHub Logo](/images/fig14-01-1.jpg)
 
-##### config.xml(部分)
-```
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.abc.myFBapplication" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>myApp</name>   
-```
+
 
 ##### 準備工作 (3)取出個人FB基本資料測試
 ![GitHub Logo](/images/fig14-01-2.jpg)
 
-
+## 測試內容如下:
+```
+ d:\
+  |___ <myApp>  
+          |___ config.xml
+          |
+          |___ <src>
+                 |___ <app>
+                 |       |___ app.module.ts                  
+                 |                  
+                 |___ <pages>   
+                         |___ <home> 
+                         |      |___ home.html 
+                         |      |___ home.ts  
+                         |      
+                         |___ <second> 
+                                |___ second.html 
+                                |___ second.ts                                 
+```
 
 #### (1)建立一個App, 名稱為 myApp:
 ```
@@ -55,14 +68,14 @@ npm install --save @ionic/storage
 備註:步驟(a)中的應用程式編號及顯示名稱, 請參考自己在準備工作(2)中的設定.
 ```
 
-
-#### (3)下載樣板程式, 解壓縮後複製到<myApp>資料夾中(取代舊檔案):
+### (3.1) config.xml(部分)
 ```
-下載\ionic-測試-14-2.zip
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.abc.myFBapplication" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>myApp</name>   
 ```
 
-
-#### (4.1) app.module.ts (增加引用 Facebook及IonicStorageModule)
+### (3.2) app.module.ts (增加引用 Facebook及IonicStorageModule)
 ```javascript
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -102,7 +115,7 @@ export class AppModule {}
 
 
 
-#### (4.2) home.html
+### (3.3) home.html
 ```html
 <ion-header>
   <ion-navbar>
@@ -132,7 +145,7 @@ export class AppModule {}
 
 
 
-#### (4.3) home.ts
+### (3.4) home.ts
 ```javascript
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -215,7 +228,7 @@ export class HomePage {
 
 
 
-#### (4.4) second.html
+### (3.5) second.html
 ```html
 <!--
   Generated template for the Second page.
@@ -247,7 +260,7 @@ export class HomePage {
 
 
 
-#### (4.5) second.ts
+### (3.6) second.ts
 ```javascript
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -288,23 +301,13 @@ export class Second {
 }
 ```
 
-#### (5)本測試使用內容如下:
-```
- d:\
-  |___ <myApp>  
-          |___ config.xml
-          |
-          |___ <src>
-                 |___ <app>
-                 |       |___ app.module.ts                  
-                 |                  
-                 |___ <pages>   
-                         |___ <home> 
-                         |      |___ home.html 
-                         |      |___ home.ts  
-                         |      
-                         |___ <second> 
-                                |___ second.html 
-                                |___ second.ts                                 
-```
 
+
+## 測試失敗的解決方法:
+
+執行時發生Invalid Key Hash...的問題, 如下:
+![GitHub Logo](/images/fig14-err-1.jpg)
+
+#### 方法(1), 移除手機的facebook app, 或
+#### 方法(2), 在fb應用程式中加入手機顯示的Hask Key, 如下:
+![GitHub Logo](/images/fig14-err-2.jpg)
