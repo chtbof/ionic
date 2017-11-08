@@ -84,7 +84,7 @@ npm install --save @ionic/storage
 備註:步驟(a)中的應用程式編號及顯示名稱, 請參考自己在準備工作(2)中的設定.
 ```
 
-### (3.1) config.xml(部分)
+### (3.1) config.xml(修改widget id, 內容與fb應用程式中的Google Play套件名稱相同)
 ```
 <widget id="com.abc.myFBapplication" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 ```
