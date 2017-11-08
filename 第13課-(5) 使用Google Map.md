@@ -115,19 +115,32 @@ export class HomePage {
   @ViewChild('mapContainer') mapContainer: ElementRef;
   map: any;
 
+  //假設目前位置
+  currentPosition={
+      'lat':25.0424,
+      'lng':121.524
+  }
+
+
+  //圖釘位置及名稱
   centers:any=[
     {
+      'id':'001',
       'lat':25.042375,
       'lng':121.525383,
       'name':'北商大'
     },
     {
+      'id':'002',      
       'lat':25.043081,
       'lng':121.523756,
       'name':'成功高中'
     }
   ];
 
+
+  //--------------------------------------------------- 
+  // 建構元
   //--------------------------------------------------- 
   constructor(public navCtrl: NavController, public toastCtrl: ToastController) {}
   
@@ -142,10 +155,10 @@ export class HomePage {
 
 
   //--------------------------------------------------- 
-  // 顯示Google地圖
+  // 顯示Google地圖(以目前位置為中心)
   //---------------------------------------------------   
   displayGoogleMap() {
-    let latLng = new google.maps.LatLng(this.centers[0].lat, this.centers[0].lng);
+    let latLng = new google.maps.LatLng(this.currentPosition.lat, this.currentPosition.lng);
 
     let mapOptions = {
       center: latLng,
@@ -164,7 +177,7 @@ export class HomePage {
   addMarkersToMap() {
     for(var center of this.centers){
       var position = new google.maps.LatLng(center.lat, center.lng);
-      var myMarker = new google.maps.Marker({position:position, title:center.name});
+      var myMarker = new google.maps.Marker({id:center.id, position:position, title:center.name});
     
       myMarker.setMap(this.map);
       this.addInfoWindowToMarker(myMarker);  
@@ -190,9 +203,9 @@ export class HomePage {
     });
     
     google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
-        //如果myBtn被點擊, 將marker.title作為參數傳給自定函數
+        //如果myBtn被點擊, 將marker.it及marker.title作為參數傳給自定函數
         document.getElementById('myBtn').addEventListener('click', () => {                    
-            this.presentToast(marker.title);
+            this.presentToast(marker.id, marker.title);
         });
     }); 
   }
@@ -200,8 +213,8 @@ export class HomePage {
   //---------------------------------------------------  
   // 自訂函數, 用來接收使用者點擊的infoWindow輸入
   //---------------------------------------------------  
-  presentToast(title) {
-    let msg="參數:" + title;
+  presentToast(id, title) {
+    let msg="參數:" + id + "," + title;
 
     let toast = this.toastCtrl.create({
       message: msg,
@@ -209,7 +222,8 @@ export class HomePage {
     });
     toast.present();
   }
-  //---------------------------------------------------       
+  //---------------------------------------------------    
+    
 }
 ```
 
