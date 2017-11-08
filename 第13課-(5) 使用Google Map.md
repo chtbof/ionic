@@ -190,7 +190,7 @@ export class HomePage {
     });
     
     google.maps.event.addListenerOnce(infoWindow, 'domready', () => {
-        //如果myBtn被點擊, 將marker.title及輸入值當為參數傳給自定函數
+        //如果myBtn被點擊, 將marker.title作為參數傳給自定函數
         document.getElementById('myBtn').addEventListener('click', () => {                    
             this.presentToast(marker.title);
         });
