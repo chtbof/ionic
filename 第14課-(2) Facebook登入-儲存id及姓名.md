@@ -24,7 +24,7 @@ keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.k
 (2)產生發行密鑰雜湊
 keytool -exportcert -alias YOUR_RELEASE_KEY_ALIAS -keystore YOUR_RELEASE_KEY_PATH | openssl sha1 -binary | openssl base64
 
-產生的密鑰雜湊, 加入fb應用程式的金鑰雜湊中, 如下:
+產生的開發密鑰雜湊及發行密鑰雜湊, 加入fb應用程式的金鑰雜湊中, 如下:
 ```
 ![GitHub Logo](/images/fig14-01-3.jpg)
 
@@ -86,9 +86,7 @@ npm install --save @ionic/storage
 
 ### (3.1) config.xml(部分)
 ```
-<?xml version='1.0' encoding='utf-8'?>
 <widget id="com.abc.myFBapplication" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>myApp</name>   
 ```
 
 ### (3.2) app.module.ts (增加引用 Facebook及IonicStorageModule)
