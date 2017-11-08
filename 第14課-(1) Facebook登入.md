@@ -14,15 +14,21 @@
 ##### 準備工作 (2)應用程式編號(不可改), 顯示名稱(即先前新增應用程式之名稱), Google Play套件名稱(與config.xml的id相同)
 ![GitHub Logo](/images/fig14-01-1.jpg)
 
-##### config.xml(部分)
+##### 準備工作 (3)在建立應用程式過程中, 將被要求產生開發密鑰雜湊及產生發行密鑰雜湊.
 ```
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.abc.myFBapplication" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>myApp</name>   
+(1)產生開發密鑰雜湊
+對於每個 Android 開發環境，您都會有唯一的開發密鑰雜湊。  
+keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base64
+
+(2)產生發行密鑰雜湊
+Android 應用程式必須先數位簽署發行密鑰雜湊，才能上傳至商店。
+keytool -exportcert -alias YOUR_RELEASE_KEY_ALIAS -keystore YOUR_RELEASE_KEY_PATH | openssl sha1 -binary | openssl base64
+
+產生的密鑰雜湊, 加入fb應用程式的金鑰雜湊中, 如下:
 ```
+![GitHub Logo](/images/fig14-01-3.jpg)
 
-
-##### 準備工作 (3)取出個人FB基本資料測試
+##### 準備工作 (4)取出個人FB基本資料測試
 ![GitHub Logo](/images/fig14-01-2.jpg)
 
 
@@ -52,8 +58,31 @@ npm install --save @ionic-native/facebook
 下載\ionic-測試-14-1.zip
 ```
 
+#### (4)本測試使用內容如下:
+```
+ d:\
+  |___ <myApp>  
+          |___ config.xml
+          |
+          |___ <src>
+                 |___ <app>
+                 |       |___ app.module.ts                  
+                 |                  
+                 |___ <pages>   
+                         |___ <home> 
+                                |___ home.html 
+                                |___ home.ts                                 
+```
 
-#### (4.1) app.module.ts (增加引用 Facebook)
+
+##### (5.1) config.xml(部分, 修改widget id, 內容與fb應用程式中的Google Play套件名稱相同)
+```
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.abc.myFBapplication" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>myApp</name>   
+```
+
+#### (5.2) app.module.ts (增加引用 Facebook)
 ```javascript
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -91,7 +120,7 @@ export class AppModule {}
 
 
 
-#### (4.2) home.html
+#### (5.3) home.html
 ```html
 <ion-header>
   <ion-navbar>
@@ -120,7 +149,7 @@ export class AppModule {}
 
 
 
-#### (4.3) home.ts
+#### (5.4) home.ts
 ```javascript
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -186,23 +215,5 @@ export class HomePage {
 
 
 
-#### (5)本測試使用內容如下:
-```
- d:\
-  |___ <myApp>  
-          |___ config.xml
-          |
-          |___ <src>
-                 |___ <app>
-                 |       |___ app.module.ts                  
-                 |                  
-                 |___ <pages>   
-                         |___ <home> 
-                         |      |___ home.html 
-                         |      |___ home.ts  
-                         |      
-                         |___ <second> 
-                                |___ second.html 
-                                |___ second.ts                                
-```
+
 
