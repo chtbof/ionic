@@ -70,11 +70,9 @@ npm install --save @ionic-native/facebook
 ```
 
 
-### (3.1) config.xml(部分, 修改widget id, 內容與fb應用程式中的Google Play套件名稱相同)
+### (3.1) config.xml(修改widget id, 內容與fb應用程式中的Google Play套件名稱相同)
 ```
-<?xml version='1.0' encoding='utf-8'?>
 <widget id="com.abc.myFBapplication" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>myApp</name>   
 ```
 
 ### (3.2) app.module.ts (增加引用 Facebook)
