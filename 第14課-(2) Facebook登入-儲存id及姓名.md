@@ -14,10 +14,26 @@
 ##### 準備工作 (2)應用程式編號(不可改), 顯示名稱(即先前新增應用程式之名稱), Google Play套件名稱(與config.xml的id相同)
 ![GitHub Logo](/images/fig14-01-1.jpg)
 
+##### 準備工作 (3)在建立應用程式過程中, 將被要求產生開發密鑰雜湊及產生發行密鑰雜湊.
+```
+**需先下載安裝openssl程式
+
+(1)產生開發密鑰雜湊 
+keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base64
+
+(2)產生發行密鑰雜湊
+keytool -exportcert -alias YOUR_RELEASE_KEY_ALIAS -keystore YOUR_RELEASE_KEY_PATH | openssl sha1 -binary | openssl base64
+
+產生的密鑰雜湊, 加入fb應用程式的金鑰雜湊中, 如下:
+```
+![GitHub Logo](/images/fig14-01-3.jpg)
 
 
-##### 準備工作 (3)取出個人FB基本資料測試
+##### 準備工作 (4)取出個人FB基本資料測試
 ![GitHub Logo](/images/fig14-01-2.jpg)
+
+
+
 
 ## 測試內容如下:
 ```
