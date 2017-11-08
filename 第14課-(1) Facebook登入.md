@@ -214,6 +214,13 @@ export class HomePage {
 ```
 
 
+## 測試失敗的解決方法:
 
+執行時發生Invalid Key Hash...的問題, 如下:
+![GitHub Logo](/images/fig14-err-1.jpg)
+
+#### 方法(1), 移除手機的facebook app, 或
+#### 方法(2), 在fb應用程式中加入手機顯示的Hask Key, 如下:
+![GitHub Logo](/images/fig14-err-2.jpg)
 
 
