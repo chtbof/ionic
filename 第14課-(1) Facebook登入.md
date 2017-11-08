@@ -16,12 +16,12 @@
 
 ##### 準備工作 (3)在建立應用程式過程中, 將被要求產生開發密鑰雜湊及產生發行密鑰雜湊.
 ```
-(1)產生開發密鑰雜湊
-對於每個 Android 開發環境，您都會有唯一的開發密鑰雜湊。  
+**需先下載安裝openssl程式
+
+(1)產生開發密鑰雜湊 
 keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base64
 
 (2)產生發行密鑰雜湊
-Android 應用程式必須先數位簽署發行密鑰雜湊，才能上傳至商店。
 keytool -exportcert -alias YOUR_RELEASE_KEY_ALIAS -keystore YOUR_RELEASE_KEY_PATH | openssl sha1 -binary | openssl base64
 
 產生的密鑰雜湊, 加入fb應用程式的金鑰雜湊中, 如下:
