@@ -70,20 +70,14 @@ npm install --save @ionic-native/facebook
 ```
 
 
-### (3)下載樣板程式, 解壓縮後複製到<myApp>資料夾中(取代舊檔案):
-```
-下載\ionic-測試-14-1.zip
-```
-
-
-### (4.1) config.xml(部分, 修改widget id, 內容與fb應用程式中的Google Play套件名稱相同)
+### (3.1) config.xml(部分, 修改widget id, 內容與fb應用程式中的Google Play套件名稱相同)
 ```
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.abc.myFBapplication" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>myApp</name>   
 ```
 
-### (4.2) app.module.ts (增加引用 Facebook)
+### (3.2) app.module.ts (增加引用 Facebook)
 ```javascript
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -121,7 +115,7 @@ export class AppModule {}
 
 
 
-### (4.3) home.html
+### (3.3) home.html
 ```html
 <ion-header>
   <ion-navbar>
@@ -150,7 +144,7 @@ export class AppModule {}
 
 
 
-### (4.4) home.ts
+### (3.4) home.ts
 ```javascript
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
