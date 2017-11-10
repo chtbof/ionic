@@ -77,7 +77,7 @@ npm install easyimage --save
 
 #### (1)建立一個App, 名稱為 myApp:
 ```
-ionic start myApp sidemenu --save
+ionic start myApp sidemenu --v2
 ```
 
 
