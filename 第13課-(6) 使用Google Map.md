@@ -298,7 +298,7 @@ page-detail {
 
 
 ### (2.7) tsconfig.json (增加"allowJs": true,)
-```css
+```json
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
