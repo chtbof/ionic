@@ -21,7 +21,7 @@ ionic start myApp blank --save
 ```
 
 
-#### (3.1) index.html (增加引用 Google Map API)
+#### (3.1) index.html (增加引用, 2處, Google Map API及vendor)
 ```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
