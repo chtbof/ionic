@@ -52,7 +52,7 @@ keytool -exportcert -alias YOUR_RELEASE_KEY_ALIAS -keystore YOUR_RELEASE_KEY_PAT
 
 ### (1)建立一個App, 名稱為 myApp:
 ```
-ionic start myApp blank --save
+ionic start myApp blank --v2
 ```
 
 
