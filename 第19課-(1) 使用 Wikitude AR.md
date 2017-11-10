@@ -34,7 +34,7 @@ myAR.zip解壓
 
 #### (1)建立一個App, 名稱為 myApp:
 ```
-ionic start myApp blank --save
+ionic start myApp blank --v2
 ```
 
 #### (2)增加一個頁面:
