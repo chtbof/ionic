@@ -62,7 +62,7 @@ npm install cors --save
 
 #### (1)建立一個App, 名稱為 myApp:
 ```
-ionic start myApp blank --save
+ionic start myApp blank --v2
 ```
 
 #### (2)下載樣板程式, 解壓縮後複製到<myApp>資料夾中(取代舊檔案):
