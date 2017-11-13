@@ -1,0 +1,124 @@
+# 第13課-(7) 取得目前座標
+
+
+#### 參考來源 https://forum.ionicframework.com/t/get-current-location-problem/111781/16
+
+
+#### 執行圖示
+![GitHub Logo](/images/fig13-07.jpg)
+
+
+## 測試內容如下:
+```
+ d:\
+  |___ <myApp> 
+          |___ <app>
+          |      |___ app.module.ts       
+          |
+          |___ <src>
+                 |___ <pages>   
+                         |___ <home> 
+                                |___ home.ts           
+```
+
+
+### (1)建立一個App, 名稱為 myApp
+```
+ionic start myApp blank --v2
+```
+
+
+### (2)移除安裝外排, 再安裝外排
+```
+cordova plugin rm cordova-plugin-geolocation 
+npm uninstall --save @ionic-native/geolocation
+
+npm rebuild
+
+cordova plugin add cordova-plugin-geolocation --variable GEOLOCATION_USAGE_DESCRIPTION="To locate you"
+npm install --save @ionic-native/geolocation
+```
+
+
+
+### (3.1) home.ts
+```javascript
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+
+//-----------------------------------------------------------
+import { Geolocation } from '@ionic-native/geolocation';
+//-----------------------------------------------------------
+
+@Component({
+  selector: 'page-home',
+  templateUrl: 'home.html'
+})
+export class HomePage {
+    //---------------------------------------------------
+    // 加入 private geolocation: Geolocation
+    //---------------------------------------------------    
+    constructor(public navCtrl: NavController, private geolocation: Geolocation) {
+        this.onLocateUser();
+    }
+    //---------------------------------------------------
+    
+    
+    
+    //---------------------------------------------------
+    onLocateUser() {
+        this.geolocation.getCurrentPosition().then((resp) => {
+            //取得目前座標
+            alert(resp.coords.latitude);
+            alert(resp.coords.longitude);
+      
+            //取得座標後再開地圖
+        }).catch((error) => {
+            //取得座標失敗
+            alert('error');
+        });
+    }
+    //---------------------------------------------------
+}
+```
+
+
+
+### (3.2) app.module.ts
+```javascript
+import { BrowserModule } from '@angular/platform-browser';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+
+//--------------------------------------------------------
+import { Geolocation } from '@ionic-native/geolocation';
+//--------------------------------------------------------
+
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
+
+@NgModule({
+  declarations: [
+    MyApp,
+    HomePage
+  ],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(MyApp)
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    HomePage
+  ],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    Geolocation,    //***增加****
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
+})
+export class AppModule {}
+```
