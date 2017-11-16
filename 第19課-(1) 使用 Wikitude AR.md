@@ -70,8 +70,7 @@ https://github.com/Wikitude/wikitude-sdk-samples
 
 #### (7)複製 [解壓縮的 src/pages/my-ar/所有程式], 貼到 [自己的 src/pages/my-ar/] 中.
 ```
-在 [自己的/src/pages/my-ar/my-ar.ts] 中, 目標座標固定在國家音樂廳, 有需要請自行修改, 如下:
-
+(在 [自己的 my-ar.ts] 中, 目標座標固定在國家音樂廳, 有需要請自行修改, 如下:)
 //---------------------------------------------------------------------------------------------
 WikitudePlugin.callJavaScript('World.loadPoisFromJsonData([{"id": "1","longitude": "121.520927","latitude": "25.035017","description": "國家音樂廳","altitude": "100.0", "name": "音樂廳"}])');
 //---------------------------------------------------------------------------------------------
