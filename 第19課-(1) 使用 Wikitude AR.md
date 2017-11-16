@@ -48,27 +48,27 @@ ionic g page my-ar
 #### (3)在<下載>資料夾中下載 myAR.zip, 下載後解壓縮.(內容為樣板程式及Wikitude檔案)
 
 
-#### (4)複製 [解壓縮的src/app/WikitudePlugin.d.ts] 到 [自己的/src/app/] 中.
+#### (4)複製 [解壓縮的 src/app/WikitudePlugin.d.ts] 到 [自己的 src/app/] 中.
 
 
-#### (5)修改 [自己的app.component.ts], 包括:
+#### (5)修改 [自己的 app.component.ts], 包括:
 
-##### (5-1)在 [解壓縮的src/app/app.component.ts] 中有2段註解的程式, 複製並貼在 [自己的app.component.ts] 中.
+##### (5-1)在 [解壓縮的 src/app/app.component.ts] 中有2段註解的程式, 複製並貼在 [自己的 app.component.ts] 中.
 ##### (5-2)在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey.
-##### (5-3)在 [自己的app.component.ts] 中, 修改sdkKey變數值, 改成自己申請的skdKey, 如下:
+##### (5-3)在 [自己的 app.component.ts] 中, 修改sdkKey變數值, 改成自己申請的skdKey, 如下:
 ```
 (sdkKey很長, 類似:)
 WikitudePlugin._sdkKey = "adG+1AQa76L/KtWTwxJRtjW88L6fDpjdX+N6fLceZYbJigDIw94PBN4.......................DgEaR6gGFOOBEZ2QFeYZ5pEGHp60="
 ```
 
 
-#### (6)複製 [解壓縮的src/assets/所有程式], 貼到 [自己的/src/assets/] 中.
+#### (6)複製 [解壓縮的 src/assets/所有程式], 貼到 [自己的 src/assets/] 中.
 ```
 如果需要更多的應用版型, 可在以下網址下載:
 https://github.com/Wikitude/wikitude-sdk-samples
 ```
 
-#### (7)複製 [解壓縮的src/pages/my-ar/所有程式], 貼到 [自己的/src/pages/my-ar/] 中.
+#### (7)複製 [解壓縮的 src/pages/my-ar/所有程式], 貼到 [自己的 src/pages/my-ar/] 中.
 ```
 在 [自己的/src/pages/my-ar/my-ar.ts] 中, 目標座標固定在國家音樂廳, 有需要請自行修改, 如下:
 
@@ -78,12 +78,12 @@ WikitudePlugin.callJavaScript('World.loadPoisFromJsonData([{"id": "1","longitude
 ```
 
 
-#### (8)複製 [解壓縮的src/pages/home/所有程式] 到 [自己的/src/pages/home/] 中.
+#### (8)複製 [解壓縮的 src/pages/home/所有程式] 到 [自己的 src/pages/home/] 中.
 ```
 複製的home是一個測試頁面, 其中有一個按鈕, 按下後打開 my-ar 頁面.
 ```
 
-#### (9)修改 [自己的/config.xml], 其中 android-minSdkVersion 改為至少 19, 如下:
+#### (9)修改 [自己的 config.xml], 其中 android-minSdkVersion 改為至少 19, 如下:
 ```
 <preference name="android-minSdkVersion" value="19"/>
 ```
