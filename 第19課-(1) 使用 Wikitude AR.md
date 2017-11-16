@@ -57,7 +57,7 @@ ionic g page my-ar
 ##### (5-2)在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey.
 ##### (5-3)在 [自己的 app.component.ts] 中, 修改sdkKey變數值, 改成自己申請的skdKey, 如下:
 ```
-(sdkKey很長, 類似:)
+(sdkKey很長, 類似以下, 請改成自己的sdkKey:)
 WikitudePlugin._sdkKey = "adG+1AQa76L/KtWTwxJRtjW88L6fDpjdX+N6fLceZYbJigDIw94PBN4.......................DgEaR6gGFOOBEZ2QFeYZ5pEGHp60="
 ```
 
