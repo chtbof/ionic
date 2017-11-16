@@ -51,7 +51,7 @@ ionic g page my-ar
 #### (4)複製 [解壓縮的src/app/WikitudePlugin.d.ts] 到 [自己的/src/app/] 中.
 
 
-#### (5)依照 [解壓縮的src/app/app.component.ts] 說明, 修改 [自己的app.component.ts], 包括:
+#### (5)修改 [自己的app.component.ts], 包括:
 
 ##### (5-1)在 [解壓縮的src/app/app.component.ts] 中有2段註解的程式, 複製並貼在 [自己的app.component.ts] 中.
 ##### (5-2)在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey.
