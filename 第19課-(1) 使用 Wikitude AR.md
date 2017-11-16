@@ -32,10 +32,11 @@ myAR.zip解壓
 # 建立步驟:
 
 
-#### (1)建立一個App, 名稱為 myApp:
+#### (1)建立一個App, 假設名稱為 myApp:
 ```
 ionic start myApp blank --v2
 ```
+
 
 #### (2)增加一個頁面:
 ```
@@ -43,77 +44,72 @@ cd myApp
 ionic g page my-ar
 ```
 
-#### (3)複製 myAR.zip解壓之src/app/WikitudePlugin.d.ts 到 myApp/src/app/ 中.
-```
-先在<下載>資料夾中下載 myAR.zip, 下載後解壓縮.
-```
 
-#### (4)依照 myAR.zip解壓之src/app/app.component.ts 說明, 修改 myApp/src/app/app.component.ts 
+#### (3)在<下載>資料夾中下載 myAR.zip, 下載後解壓縮.(內容為樣板程式及Wikitude檔案)
+
+
+#### (4)複製 [解壓縮的src/app/WikitudePlugin.d.ts] 到 [自己的/src/app/] 中.
+
+
+#### (5)依照 [解壓縮的src/app/app.component.ts] 說明, 修改 [自己的app.component.ts], 包括:
+
+##### (5-1)在 [解壓縮的src/app/app.component.ts] 中有2段註解的程式, 複製並貼在 [自己的app.component.ts] 中.
+##### (5-2)在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey.
+##### (5-3)在 [自己的app.component.ts] 剛貼入的第2段程式中, 填入自己申請的skdKey, 如下:
 ```
-(4-1)
-在myAR.zip解壓之src/app/app.component.ts中有2段註解的程式, 複製貼上 myApp/src/app/app.component.ts中.
-
-(4-2)
-在 http://www.wikitude.com/developer/licenses 申請一個免費的skdKey.
-
-(4-3)
-在加入第2段程式中的以下指令內, 填入自己申請的金鑰:
+(自己的app.component.ts, 填入skdKey的地方)
 WikitudePlugin._sdkKey = ".....貼入自己的skdKey....."
 ```
 
-#### (5)複製 myAR.zip解壓之src/assets/[所有程式] 到 myApp/src/assets/ 中.
+
+#### (6)複製 [解壓縮的src/assets/所有程式], 貼到 [自己的/src/assets/] 中.
 ```
 如果需要更多的應用版型, 可在以下網址下載:
 https://github.com/Wikitude/wikitude-sdk-samples
 ```
 
-#### (6)複製 myAR.zip解壓之src/pages/my-ar/[所有程式] 到 myApp/src/pages/my-ar/ 中.
+#### (7)複製 [解壓縮的src/pages/my-ar/所有程式], 貼到 [自己的/src/pages/my-ar/] 中.
 ```
-my-ar.ts 程式呼叫 Wikitude 外掛, 並傳送座標參數. 參數是一個陣列, 目前只包含一個物件, 但也可以修改傳送多個目標物件, 如下:
+在 [自己的/src/pages/my-ar/my-ar.ts] 中, 目標座標固定在國家音樂廳, 有需要請自行修改, 如下:
 
-.
-.
-//---------------------------------------------------------------------------------------------
-//傳參數給 [www/assets/09_ObtainPoiData_1_FromApplicationModel/fromapplicationmodel.js]的函式
 //---------------------------------------------------------------------------------------------
 WikitudePlugin.callJavaScript('World.loadPoisFromJsonData([{"id": "1","longitude": "121.520927","latitude": "25.035017","description": "國家音樂廳","altitude": "100.0", "name": "音樂廳"}])');
 //---------------------------------------------------------------------------------------------
-.
-.
 ```
 
-#### (7)複製 myAR.zip解壓之src/pages/home/[所有程式] 到 myApp/src/pages/home/ 中.
+
+#### (8)複製 [解壓縮的src/pages/home/所有程式] 到 [自己的/src/pages/home/] 中.
 ```
-範例中的home只是加入一個按鈕, 按下後打開 my-ar 頁面而已.
+複製的home是一個測試頁面, 其中有一個按鈕, 按下後打開 my-ar 頁面.
 ```
 
-#### (8)修改 myApp/config.xml, 其中 android-minSdkVersion 改為至少 19, 如下:
+#### (9)修改 [自己的/config.xml], 其中 android-minSdkVersion 改為至少 19, 如下:
 ```
 <preference name="android-minSdkVersion" value="19"/>
 ```
 
 
-#### (9)加入android平台程式:
+#### (10)加入android平台程式:
 ```
 cd myApp
 cordova platform add android
 ```
 
-#### (10)加入Wikitude外掛:
+#### (11)加入Wikitude外掛:
 ```
 ionic plugin add https://github.com/Wikitude/wikitude-cordova-plugin.git
 ```
 
-#### (11)編譯 (wikitude不能在模擬器上執行, 應該有模擬器錯誤, 不必理會):
+#### (12)編譯 (wikitude不能在模擬器上執行, 應該有模擬器錯誤, 不必理會):
 ```
 ionic serve -l -c
 ```
 
 
-#### (12)產生apk檔, 完成後發佈到手機上執行:
+#### (13)產生apk檔, 完成後發佈到手機上執行:
 ```
 cordova build
 ```
 
-#### (13)在手機執行前, 請先開啟手機的定位功能.
+#### (14)在手機執行前, 請先開啟手機的定位功能.
 
