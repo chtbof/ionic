@@ -79,7 +79,7 @@ WikitudePlugin.callJavaScript('World.loadPoisFromJsonData([{"id": "1","longitude
 
 #### (8)複製 [解壓縮的 src/pages/home/所有程式] 到 [自己的 src/pages/home/] 中.
 ```
-複製的home是一個測試頁面, 其中有一個按鈕, 按下後打開 my-ar 頁面.
+複製的 home 僅作為測試頁面, 其內有一個按鈕, 按下後打開 my-ar 頁面.
 ```
 
 #### (9)修改 [自己的 config.xml], 其中 android-minSdkVersion 改為至少 19, 如下:
