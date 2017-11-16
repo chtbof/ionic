@@ -178,11 +178,15 @@ export class MyAr {
     ionViewDidEnter() {
         var startupConfiguration: any = {"camera_position": "back"};
 
+        //---------------------------------
+        //依自己的需要修改
+        //---------------------------------
         var targetId=1;
         var targetLon=121.520927;
         var targetLat=25.035017;
         var targetName='音樂廳';
         var targetDescription='國家音樂廳';
+        //---------------------------------	
 
         var target='World.loadPoisFromJsonData([{"id": "'+ targetId + '","longitude": "' + targetLon + '","latitude": "' + targetLat + '","description": "' + targetDescription + '","altitude": "100.0", "name": "' + targetName + '"}])';
         
@@ -197,7 +201,7 @@ export class MyAr {
                 WikitudePlugin.callJavaScript('World.architectView.setLocation()');
 		
                 //---------------------------------------------------------------------------------------------
-                //(2)再設定目的地座標(依自己的需要修改)
+                //(2)再設定目的地座標
                 //---------------------------------------------------------------------------------------------
                 WikitudePlugin.callJavaScript(target);
                 //---------------------------------------------------------------------------------------------
