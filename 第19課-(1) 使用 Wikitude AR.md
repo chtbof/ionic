@@ -96,7 +96,7 @@ cordova platform add android
 
 #### (11)加入Wikitude外掛:
 ```
-cordova plugin add https://github.com/Wikitude/wikitude-cordova-plugin.git
+ionic plugin add https://github.com/Wikitude/wikitude-cordova-plugin.git
 ```
 
 #### (12)編譯 (wikitude不能在模擬器上執行, 應該有模擬器錯誤, 不必理會):
