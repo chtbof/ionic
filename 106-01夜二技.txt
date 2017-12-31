@@ -337,7 +337,7 @@ export class DetailPage {
 
 
 =================================================
-(4-2)map.html
+(5-1)map.html
 =================================================
 <ion-header>
 
@@ -360,7 +360,7 @@ export class DetailPage {
 
 
 =================================================
-(4-3)map.html
+(5-2)map.ts
 =================================================
 import { Component, ViewChild, ElementRef  } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -427,7 +427,7 @@ export class MapPage {
 
 
 =================================================
-(4-4)map.html
+(5-3)map.scss
 =================================================
 page-map {
   .scroll-content {
