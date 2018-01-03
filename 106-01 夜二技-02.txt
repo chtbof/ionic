@@ -182,7 +182,7 @@ function sendData(res){
                 //========================================				
                 var name=results[i].name;
                 var description=results[i].description;	
-				var address=results[i].address;							
+                var address=results[i].address;							
 
                 //========================================				
                 //將資料加入物件中
@@ -190,7 +190,7 @@ function sendData(res){
                 var item={};
                 item.name=name;
                 item.description=description;
-				item.address=address;
+                item.address=address;
 				
                 //將存有資料的物件加入陣列
                 data.push(item);
@@ -313,3 +313,5 @@ export class HomePage {
   </ion-list>
   <!-- ------------------------------------- -->
 </ion-content>
+
+
