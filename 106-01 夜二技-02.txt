@@ -15,7 +15,7 @@ CREATE TABLE `scenery` (
   `telephone` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `address` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `latitude` double DEFAULT NULL,
-  `longtitude` double DEFAULT NULL,
+  `longitude` double DEFAULT NULL,
   `smallPicture` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `IlargePicture` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`serNo`)
