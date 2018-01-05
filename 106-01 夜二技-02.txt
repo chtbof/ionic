@@ -17,7 +17,7 @@ CREATE TABLE `scenery` (
   `latitude` double DEFAULT NULL,
   `longitude` double DEFAULT NULL,
   `smallPicture` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `IlargePicture` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `largePicture` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`serNo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
