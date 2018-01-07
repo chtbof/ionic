@@ -39,9 +39,13 @@ ionic start myApp blank --v2
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 
+  
   <!-- 增加引用 Google Map API -->
+  <!-- ...................................................... -->
   <script src="http://maps.google.com/maps/api/js"></script>
-
+  <!-- ...................................................... -->
+  
+  
   <link href="build/main.css" rel="stylesheet">
 
 </head>
@@ -54,7 +58,9 @@ ionic start myApp blank --v2
   <script src="build/polyfills.js"></script>
 
   <!-- 增加 -->
+  <!-- ....................................... -->
   <script src="build/vendor.js"></script>
+  <!-- ....................................... -->
 
   <!-- The bundle js is generated during the build process -->
   <script src="build/main.js"></script>
