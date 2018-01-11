@@ -599,9 +599,9 @@ export class MapPage {
   longitude:any;
   
   center:any={
-    'lat':latitude,
-    'lng':longitude,
-    'name':name
+    'lat':this.latitude,
+    'lng':this.longitude,
+    'name':this.name
   };    
   //---------------------------------------------------
   
