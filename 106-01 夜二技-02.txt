@@ -47,6 +47,7 @@ express myWeb -ejs
 cd myWeb
 npm install
 npm install mysql --save
+npm start
 =================================================
 
 =================================================
