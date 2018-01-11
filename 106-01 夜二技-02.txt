@@ -40,7 +40,8 @@ INSERT INTO `scenery` VALUES ('10', '樹林夜市', '說起樹林夜市的發展
 
 
 =================================================
-(2)網站
+(2)建立網站
+=================================================
 d:
 cd\
 express myWeb -ejs        (建立網站框架)
@@ -54,7 +55,7 @@ npm start                 (啟動主機)
 
 
 =================================================
-網站架構
+(3)網站架構
 =================================================
   |__ app.js
   |
@@ -76,7 +77,7 @@ npm start                 (啟動主機)
 
 
 =================================================
-(2-1)網站 app.js
+(3-1)網站 app.js
 =================================================
 var express = require('express');
 var path = require('path');
@@ -133,7 +134,7 @@ module.exports = app;
 
 
 =================================================
-(2-2)db.js
+(3-2)db.js
 =================================================
 var mysql = require('mysql');
 
@@ -158,7 +159,7 @@ module.exports = pool;
 
 
 =================================================
-(2-3)index.js
+(3-3)index.js
 =================================================
 var express = require('express');
 var router = express.Router();
@@ -177,14 +178,12 @@ router.get('/', function(req, res, next) {
     sendData(res);
 });
 
-
 //----------------
 // POST請求
 //----------------
 router.post('/', function(req, res, next) {	
     sendData(res);
 });
-
 
 //--------------------
 // 回傳JSON資料
@@ -204,7 +203,11 @@ function sendData(res){
                 //========================================				
                 var name=results[i].name;
                 var description=results[i].description;	
-                var address=results[i].address;							
+                var address=results[i].address;	
+                var smallPicture=results[i].smallPicture;	
+                var largePicture=results[i].largePicture;	
+                var latitude=results[i].latitude;	
+                var longitude=results[i].longitude;	                                                                						
 
                 //========================================				
                 //將資料加入物件中
@@ -213,6 +216,10 @@ function sendData(res){
                 item.name=name;
                 item.description=description;
                 item.address=address;
+                item.smallPicture=smallPicture;
+                item.largePicture=largePicture;
+                item.latitude=latitude;
+                item.longitude=longitude;                                                                
 				
                 //將存有資料的物件加入陣列
                 data.push(item);
@@ -230,19 +237,119 @@ module.exports = router;
 
 
 ===============================================================================
-(3)手機
-d:
-cd\
-ionic start myApp blank
-cd myApp
-ionic serve -l
-
-(3)瀏覽器
+(4)瀏覽器加入外掛
+===============================================================================
 如在Chrome中執行模擬器, 先安裝Chrome Extension: Allow-Control-Allow_Origin
 ===============================================================================
 
+
+
+
+===============================================================================
+(5)建立手機程式
+===============================================================================
+d:
+cd\
+ionic start myApp blank   (建立手機程式架構)
+cd myApp
+ionic g page detail       (追加一個頁面-detail)
+ionic g page map          (追加一個頁面-map)
+ionic serve -l            (啟動模擬器)
+===============================================================================
+
+
+
+
 =================================================
-(3-1)手機 app.module.js (加入2處)
+(6)手機程式架構
+=================================================
+  .
+<src> 
+  |
+  |__ <theme>
+  |      |__ variables.scss
+  |
+  |__ <app>
+  |      |__ app.module.ts  
+  |
+  |__ <pages>
+         |__ <home>
+         |     |__ home.html
+         |     |__ home.ts  
+         |
+         |__ <detail>
+         |     |__ detail.html
+         |     |__ detail.ts 
+         |
+         |__ <map>
+               |__ map.html
+               |__ map.ts   
+  
+=================================================
+
+
+
+
+
+=================================================
+(6-1)手機 variables.scss
+=================================================
+$font-path: "../assets/fonts";
+
+@import "ionic.globals";
+
+//--------------------------------
+// 宣告使用的顏色
+//--------------------------------
+$colors: (
+    primary:    #550000,
+    secondary:  #aa3939,
+    danger:     #f53d3d,
+    light:      #f4f4f4,
+    dark:       #222
+);
+//--------------------------------
+
+//-----------------------------------
+// 更改各項目顏色配置
+// ----------------------------------
+$text-color:                 #000 !default;
+$link-color:                 color($colors, primary) !default;
+$background-color:           #fff !default;
+$subdued-text-color:         #666 !default;
+
+$font-family-base:           -apple-system, "Helvetica Neue", "Roboto", sans-serif !default;
+$font-size-base:             1.4rem !default; // 1.4rem == 14px
+
+$content-padding:            16px !default;
+$content-margin:             16px !default;
+
+$toolbar-background:         color($colors, primary) !default;
+$toolbar-border-color:       #b2b2b2 !default;
+$toolbar-text-color:         $text-color !default;
+$toolbar-active-color:       $link-color !default;
+$toolbar-inactive-color:     #8c8c8c !default;
+
+$tabs-background:            #f8f8f8 !default;
+$tabs-border-color:          #b2b2b2 !default;
+$tabs-tab-color-inactive:    #8c8c8c !default;
+$tabs-tab-color-active:      $link-color !default;
+
+$list-text-color:            $text-color !default;
+$list-background-color:      #ffffff !default;
+$list-border-color:          #c8c7cc !default;
+
+@import "ionic.theme.default";
+@import "ionic.ionicons";
+
+@import "roboto";
+@import "noto-sans";
+
+
+
+
+=================================================
+(6-2)手機 app.module.js
 =================================================
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -283,7 +390,36 @@ export class AppModule {}
 
 
 =================================================
-(3-2)手機 home.ts
+(6-3)手機 home.html (修改成自己的網站IP位址)
+=================================================
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      景點清單
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- ------------------------------------ -->
+  <ion-list>
+    <ion-item *ngFor='let item of items'>
+      <ion-thumbnail item-start>
+        <img src="http://120.97.27.***/images/{{smallPicture}}">
+      </ion-thumbnail>
+      <h2>{{item.name}}</h2>
+      <p>{{item.address}}</p>
+      <button ion-button clear item-end>詳細</button>
+    </ion-item>
+  </ion-list>
+  <!-- ------------------------------------- -->
+</ion-content>
+
+
+
+
+=================================================
+(6-4)手機 home.ts (修改成自己的網站IP位址)
 =================================================
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -301,7 +437,7 @@ export class HomePage {
 	
     //---------------------------------
     constructor(public navCtrl: NavController, public http:Http) {
-        this.http.get('http://192.168.56.1:3000')			
+        this.http.get('http://120.97.27.***')			
             .subscribe(response => {
                 this.items=response.json();
             });			
@@ -312,30 +448,6 @@ export class HomePage {
 
 
 
-=================================================
-(3-3)手機 home.html
-=================================================
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      景點清單
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content>
-  <!-- ------------------------------------ -->
-  <ion-list>
-    <ion-item *ngFor='let item of items'>
-      <ion-thumbnail item-start>
-        <img src="img/thumbnail-totoro.png">
-      </ion-thumbnail>
-      <h2>{{item.name}}</h2>
-      <p>{{item.address}}</p>
-      <button ion-button clear item-end>詳細</button>
-    </ion-item>
-  </ion-list>
-  <!-- ------------------------------------- -->
-</ion-content>
 
 
