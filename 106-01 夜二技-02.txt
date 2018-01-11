@@ -411,7 +411,7 @@ export class AppModule {}
       </ion-thumbnail>
       <h2>{{item.name}}</h2>
       <p>{{item.address}}</p>
-      <button ion-button clear item-end>詳細</button>
+      <button ion-button clear item-end (click)='goDetail(item.name, item.address, item.description)'>詳細</button>
     </ion-item>
   </ion-list>
   <!-- ------------------------------------- -->
@@ -457,7 +457,7 @@ export class HomePage {
   // 自訂函式
   //---------------------------------  
   goDetail(){
-    this.navCtrl.push('DetailPage');
+    this.navCtrl.push('DetailPage', {name:name, address:address, description:description});
   }
   //---------------------------------      
 }
@@ -492,7 +492,7 @@ export class HomePage {
     <img src="img/advance-card-bttf.png">
 
     <ion-card-content>
-      <p>out of a DeLorean?! Whoa. This is heavy.</p>
+      <p>{{description}}</p>
     </ion-card-content>
 
     <ion-row>      
@@ -526,6 +526,9 @@ export class DetailPage {
   //--------------------------
   // 成員
   //--------------------------  
+  name:any;
+  address:any;
+  description:any  
   //--------------------------
 
 
@@ -533,6 +536,9 @@ export class DetailPage {
   // 建構元
   //--------------------------
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.name=this.navParams.get('name');
+    this.address=this.navParams.get('address');
+    this.description=this.navParams.get('description');  
   }
   //--------------------------
 
@@ -588,19 +594,26 @@ export class MapPage {
   //---------------------------------------------------
   @ViewChild('mapContainer') mapContainer: ElementRef;
   map: any;
-
+  name:any;
+  latitude:any;
+  longitude:any;
+  
   center:any={
-    'lat':25.042375,
-    'lng':121.525383,
-    'name':'北商大'
-  };  
+    'lat':latitude,
+    'lng':longitude,
+    'name':name
+  };    
   //---------------------------------------------------
   
 
   //--------------------------------------------------- 
   // 建構元
   //---------------------------------------------------  
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+     this.name='北商大';
+     this.latitude=25.042375;
+     this.longitude=121.525383;
+  }
   //---------------------------------------------------
 
 
