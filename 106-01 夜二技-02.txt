@@ -41,6 +41,8 @@ INSERT INTO `scenery` VALUES ('10', '樹林夜市', '說起樹林夜市的發展
 
 =================================================
 (2)網站
+d:
+cd\
 express myWeb -ejs
 cd myWeb
 npm install
@@ -203,6 +205,8 @@ module.exports = router;
 
 ===============================================================================
 (3)手機
+d:
+cd\
 ionic start myApp blank
 cd myApp
 ionic serve -l
