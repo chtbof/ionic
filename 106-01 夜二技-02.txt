@@ -593,16 +593,8 @@ export class MapPage {
   // 成員  
   //---------------------------------------------------
   @ViewChild('mapContainer') mapContainer: ElementRef;
-  map: any;
-  name:any;
-  latitude:any;
-  longitude:any;
-  
-  center:any={
-    'lat':this.latitude,
-    'lng':this.longitude,
-    'name':this.name
-  };    
+  map:any; 
+  center={};    
   //---------------------------------------------------
   
 
@@ -610,9 +602,9 @@ export class MapPage {
   // 建構元
   //---------------------------------------------------  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-     this.name='北商大';
-     this.latitude=25.042375;
-     this.longitude=121.525383;
+     this.center.name='北商大';
+     this.center.latitude=25.042375;
+     this.center.longitude=121.525383;
   }
   //---------------------------------------------------
 
@@ -631,7 +623,7 @@ export class MapPage {
   // 顯示地圖
   //--------------------------------------------------- 
   displayGoogleMap() {
-    let latLng = new google.maps.LatLng(this.center.lat, this.center.lng);
+    let latLng = new google.maps.LatLng(this.center.latitude, this.center.longitude);
 
     let mapOptions = {
       center: latLng,
@@ -649,7 +641,7 @@ export class MapPage {
   // 加入圖釘
   //--------------------------------------------------- 
   addMarkersToMap() {
-    var position = new google.maps.LatLng(this.center.lat, this.center.lng);
+    var position = new google.maps.LatLng(this.center.latitude, this.center.longitude);
     var myMarker = new google.maps.Marker({position:position, title:this.center.name});
     
     myMarker.setMap(this.map);    
