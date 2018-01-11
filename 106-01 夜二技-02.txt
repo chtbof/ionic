@@ -594,7 +594,7 @@ export class MapPage {
   //---------------------------------------------------
   @ViewChild('mapContainer') mapContainer: ElementRef;
   map:any; 
-  center={};    
+  center={name:'', latitude:0, longitude:0};      
   //---------------------------------------------------
   
 
