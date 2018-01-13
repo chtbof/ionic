@@ -351,7 +351,7 @@ $list-border-color:          #c8c7cc !default;
 
 
 =================================================
-(6-2)手機 app.module.js
+(6-2)手機 app.module.ts
 =================================================
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
