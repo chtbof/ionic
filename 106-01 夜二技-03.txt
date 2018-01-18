@@ -208,7 +208,9 @@ function sendData(res){
                 var smallPicture=results[i].smallPicture;	
                 var largePicture=results[i].largePicture;	
                 var latitude=results[i].latitude;	
-                var longitude=results[i].longitude;	                                                                						
+                var longitude=results[i].longitude;
+		var author=results[i].author;
+		var authorPicture=results[i].authorPicture;
 
                 //========================================				
                 //將資料加入物件中
@@ -220,7 +222,9 @@ function sendData(res){
                 item.smallPicture=smallPicture;
                 item.largePicture=largePicture;
                 item.latitude=latitude;
-                item.longitude=longitude;                                                                
+                item.longitude=longitude;   
+		item.author=author;  
+		item.authorPicture=authorPicture;  
 				
                 //將存有資料的物件加入陣列
                 data.push(item);
