@@ -424,7 +424,7 @@ export class AppModule {}
         <!-- *************************** -->
         <!-- ---修改成自己的位址--------- -->
         <!-- *************************** -->
-        <img src="http://120.97.27.***/images/{{smallPicture}}">
+        <img src="http://120.97.27.***/images/{{item.smallPicture}}">
       </ion-thumbnail>
       <h2>{{item.name}}</h2>
       <p>{{item.address}}</p>
