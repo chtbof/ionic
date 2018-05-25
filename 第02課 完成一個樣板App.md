@@ -14,7 +14,7 @@
 ```
 d:
 cd\
-ionic start myApp blank --v2
+ionic start myApp blank
 ```
 其中myApp是資料夾名稱, blank是空白框架, --v2是第二版, 圖示如下. 詳細請參考Ionic文件. <p>
 ![GitHub Logo](/images/fig02-01.jpg)
