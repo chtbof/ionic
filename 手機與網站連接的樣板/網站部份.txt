@@ -6,6 +6,7 @@ express web -ejs
 cd web
 npm install 
 npm install mysql --save
+npm start
 
 
 
