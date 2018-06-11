@@ -76,7 +76,7 @@ export class AppModule {}
       <h2>{{item.name}}</h2>
       <p>{{item.desc}}</p>
       
-      <button ion-button clear item-end (click)='goDetail(item.name, item.address, item.description)'>詳細</button>
+      <button ion-button clear item-end (click)='goDetail(item.name, item.desc, item.pic)'>詳細</button>
     </ion-item>
   </ion-list>
   <!-- ------------------------------------- -->
@@ -118,8 +118,8 @@ export class HomePage {
     //---------------------------------  
     // 自訂函式
     //---------------------------------     
-    goDetail(name, address, description){
-        this.navCtrl.push('DetailPage', {name:name, address:address, description:description});
+    goDetail(name, desc, pic){
+        this.navCtrl.push('DetailPage', {name:name, desc:desc, pic:pic});
     }
       
 
