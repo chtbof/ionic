@@ -128,7 +128,7 @@ export class HomePage {
     // 自訂函式
     //---------------------------------     
     loadData(){
-      this.http.get(this.webHttp).subscribe(response => {
+      this.http.get(this.urlService).subscribe(response => {
           this.items=response.json(); 
       });	     
     }
