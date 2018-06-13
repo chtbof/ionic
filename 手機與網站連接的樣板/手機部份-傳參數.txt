@@ -2,7 +2,7 @@
 (1) 建立ionic部分
 =================================================
 d:
-ionic start myApp blank
+ionic start myApp sidemenu
 cd myApp
 ionic serve -l
 
