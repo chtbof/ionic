@@ -152,7 +152,8 @@ function sendData(res, no){
                 var address=results[i].address;	
                 var tel=results[i].tel;	
                 var lat=results[i].lat;	
-                var lng=results[i].lng;            
+                var lng=results[i].lng;  
+                var pic=results[i].pic; 
 
                 //========================================				
                 //將一筆記錄加入item物件中
@@ -166,6 +167,7 @@ function sendData(res, no){
                 item.tel=tel;
                 item.lat=lat;   
                 item.lng=lng;  
+                item.pic=pic;
 
                 //========================================					
                 //將item物件加入data陣列中
