@@ -1,0 +1,138 @@
+=================================================
+(1) 建立ionic部分
+=================================================
+d:
+ionic start myApp blank
+cd myApp
+ionic serve -l
+
+
+
+=================================================
+(2) Chrome瀏覽器增加 Allow-Control-Allow-Origin
+=================================================
+
+
+
+=================================================
+(3) app.module.ts
+=================================================
+import { BrowserModule } from '@angular/platform-browser';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+//------------------------------------------------
+import { HttpModule } from '@angular/http';
+//------------------------------------------------
+
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
+
+@NgModule({
+  declarations: [
+    MyApp,
+    HomePage
+  ],
+  imports: [
+    BrowserModule,
+    HttpModule,    /* 增加匯入 */
+    IonicModule.forRoot(MyApp)
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    HomePage
+  ],
+  providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
+})
+export class AppModule {}
+
+
+
+=================================================
+(4) home.html (修改網址)
+=================================================
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      景點清單
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- ------------------------------------ -->
+  <ion-list>
+    <ion-item *ngFor='let item of items'>
+      <ion-thumbnail item-start>
+        <img src="{{url}}/images/{{item.pic}}">
+      </ion-thumbnail>
+      
+      <h2>{{item.name}}</h2>
+      <p>{{item.introduction}}</p>
+      
+      <button ion-button clear item-end (click)='goDetail(item.name, item.introduction, item.district)'>詳細</button>
+    </ion-item>
+  </ion-list>
+  <!-- ------------------------------------- -->
+</ion-content>
+
+
+
+=================================================
+(5) home.ts
+=================================================
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+//---------------------------------------
+import { Http } from '@angular/http';
+//---------------------------------------
+
+@Component({
+    selector: 'page-home',
+    templateUrl: 'home.html'
+})
+export class HomePage {
+    //---------------------------------  
+    // 成員
+    //---------------------------------  
+    items=[];
+    url='http://120.97.27.???';
+    urlService='http://120.97.27.???/?no=1';
+    //---------------------------------  
+
+
+    //---------------------------------  
+    // 建構元
+    //---------------------------------  
+    constructor(public navCtrl: NavController, public http:Http) {
+        this.loadData();		
+    }
+    //---------------------------------  
+
+
+    //---------------------------------  
+    // 自訂函式
+    //---------------------------------     
+    goDetail(name, introduction, district){
+        this.navCtrl.push('DetailPage', {name:name, introduction:introduction, district:district});
+    }
+      
+
+    //---------------------------------  
+    // 自訂函式
+    //---------------------------------     
+    loadData(){
+      this.http.get(this.webHttp).subscribe(response => {
+          this.items=response.json(); 
+      });	     
+    }
+    //---------------------------------      
+}
+
+
